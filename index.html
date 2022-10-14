@@ -1,0 +1,120 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset=utf-8>
+
+    <title>Flow Visualization HW 03</title>
+
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
+
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="//d3js.org/d3-scale-chromatic.v0.3.min.js"></script>
+
+    <script src="js/three.js"></script>
+    <script src="js/OrbitControls.js"></script>
+    <script src="js/scene.js"></script>
+    <script src="js/particleSystem.js"></script>
+    <script src="js/main.js"></script>
+
+
+</head>
+
+<!-- col-8 -> cylinder + slider 
+col- 4 -> 2d plot -->
+
+
+<body style="background-color:#e1e5f8" onload="App.start()">
+
+    <div class="text-center">
+        <h2 >Flow Visualization using Three.js and D3.js</h2>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-8">
+                <div id="primary-container" class="d-flex">
+                    <div class="m-4">
+                        <div class="particles" >
+                            <div id="scene"></div>
+                        </div>
+                    </div>
+                    <div class="m-4">
+                        <span>
+                            <label for="z">Z = </label>
+                            <input type="text" id="z" readonly>
+                        </span>
+                    </div>
+                    <div class="m-4">
+                        <div id="zSlider" class="slider">
+
+                        </div>
+                    </div>
+                    <div class="m-4">
+                        <button id="reset" class="btn btn-success">Reset</button>
+                    </div>
+                    <div class="m-4">
+                        <div class="instructions"><h4>Instructions:
+                            <ol>
+                            <li>Use the slider above to move the plane along the Z axis.(Range: -5 to 5)</li>
+                            <li>The Cylinder can be rotated with the mouse and zoomed with mouse scroll.</li>
+                            <li>Use Arrow Keys to rotate the cylinder.</li>
+                            <li>Click on "Reset" button to reset the cylinder to default position.</li>
+                            </ol></h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="secondary-container">
+                    <div class="m-2">
+                        <div class="outer-plane">
+                            <div class="plane col-lg-4 "></div>
+                        </div>
+                    </div>
+
+                    <div class="m-2">
+                        <div class="legend">
+                            <div class='legend-title'>Particle Concentration</div>
+                            <div class='legend-scale'>
+                                <ul class='legend-labels'>
+                                    <li><span style='background:#A50026;'></span>0 - 0.005</li>
+                                    <li><span style='background:#DC4030;'></span>20</li>
+                                    <li><span style='background:#F78850;'></span>  50</li>
+                                    <li><span style='background:#FDBA6E;'></span>  100</li>
+                                    <li><span style='background:#FEE296 ;'></span>  120</li>
+                                    <li><span style='background:#F8F9C7;'></span>  150</li>
+                                    <li><span style='background:#D6EEEE;'></span>  200</li>
+                                    <li><span style='background:#A4D2E5;'></span>  250</li>
+                                    <li><span style='background:#5F93C4;'></span>  300</li>
+                                    <li><span style='background:#3E5BA7;'></span>  360</li>
+                                    <li><span style='background:#313695;'></span>  360</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                    <div class="m-2">
+                        <div>
+                            <h4>Credits:</h4>
+                            <ol>
+                                <li><a href="https://threejs.org/">Three js</a></li>
+                                <li><a href="https://jquery.com/">jQuery</a></li>
+                                <li><a href="https://jqueryui.com/slider/#slider-vertical">Jquery UI</a></li>
+                                <li><a href="https://d3js.org/">D3.js</a></li>
+                                <li><a href="https://github.com/uic-evl/cs529-vds">Starter Kit for the Assignment</a></li>
+                                <li><a href="https://github.com/d3/d3-interpolate">D3.js Interpolate</a></li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
